@@ -1,12 +1,12 @@
 import React from 'react';
 import dramaImg from './images/drama.png';
 
-function Card(){
+function Card(props){
 
   return(
     <div className='card-div'>
-      <h1 className='card-title'>osas</h1>
-      <img src={dramaImg} className='img-card'/>
+      <h1 className='card-title'>{props.title}</h1>
+      <img src={dramaImg} className='img-card' alt={props.title}/>
     </div>
   )
 }

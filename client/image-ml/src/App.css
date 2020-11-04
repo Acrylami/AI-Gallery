@@ -1,15 +1,30 @@
+/* Heading component */
+.heading{
+  background-color: #021d44;
+  height: 40vh;
+  text-align: center;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
+
 /* Card component */
 .card-div{
-  width: 20vw;
+  width: 25vw;
   height: 50vh;
-  background-color: purple;
+  background-color: #3f72af;
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 5px;
+  border-color: #f73859;
+  border-style: solid;
+  border-width: 2px;
 }
 .card-div:hover{
-  width: 22vw;
+  width: 26vw;
   height: 52vh;
 }
 .card-title{
@@ -20,4 +35,9 @@
 .img-card{
   width: 30%;
   height: 30%;
+}
+
+/* CardList component */
+.card-list{
+  margin: 0 10vw;
 }
