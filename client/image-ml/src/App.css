@@ -1,3 +1,8 @@
+/* General component */
+.app-container{
+  margin: 0 10vw;
+}
+
 /* Heading component */
 .heading{
   background-color: #021d44;
@@ -24,7 +29,8 @@
   border-width: 2px;
 }
 .card-div:hover{
-  width: 26vw;
+  box-shadow: 5px 10px 10px 2px #aaaaaa;
+  margin-top: -10px;
   height: 52vh;
 }
 .card-title{
@@ -37,7 +43,21 @@
   height: 30%;
 }
 
-/* CardList component */
-.card-list{
-  margin: 0 10vw;
+/* MemeSwapper component */
+.meme-img{
+  margin-left: auto;
+  margin-right: auto;
+}
+.upload-label{
+  width: 20vw;
+  cursor: pointer;
+}
+.upload-div{
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+.swap-btn{
+  display: flex;
+  justify-content: center;
 }

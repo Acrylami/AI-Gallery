@@ -12,7 +12,7 @@ function App() {
         <Home />
       </Route>
 
-      <Route exact path='/image/:function'>
+      <Route exact path='/image/:feature'>
         <Function />
       </Route>
 

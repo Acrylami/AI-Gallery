@@ -1,11 +1,11 @@
 import React from 'react';
 
-function Heading(){
+function Heading(props){
 
   return(
     <div className='heading'>
-      <h1>Welcome to the image playground</h1>
-      <p>were you can use machine learning to do lots of cool stuff with an image</p>
+      <h1>{props.head}</h1>
+      <p>{props.subHead}</p>
     </div>
   )
 }
