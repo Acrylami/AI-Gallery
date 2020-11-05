@@ -8,5 +8,14 @@ from flask.helpers import flash
 def home():
     return render_template('home.html',  title='MemeSwap')
 
+@app.route("/server/upload", methods=["GET", "POST"])
+def upload_image():
+    if request.method == "POST":
+        if request.files:
+            image = request.files["image"]
+            print(image)
+            return redirect(request.url)
+    return render_template('home.html',  title='MemeSwap')
+
 
 
