@@ -1,0 +1,63 @@
+/* General component */
+.app-container{
+  margin: 0 10vw;
+}
+
+/* Heading component */
+.heading{
+  background-color: #021d44;
+  height: 40vh;
+  text-align: center;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
+
+/* Card component */
+.card-div{
+  width: 25vw;
+  height: 50vh;
+  background-color: #3f72af;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  border-color: #f73859;
+  border-style: solid;
+  border-width: 2px;
+}
+.card-div:hover{
+  box-shadow: 5px 10px 10px 2px #aaaaaa;
+  margin-top: -10px;
+  height: 52vh;
+}
+.card-title{
+  margin-top: 30px;
+  margin-bottom: 60px;
+  color: white;
+}
+.img-card{
+  width: 30%;
+  height: 30%;
+}
+
+/* MemeSwapper component */
+.meme-img{
+  margin-left: auto;
+  margin-right: auto;
+}
+.upload-label{
+  width: 20vw;
+  cursor: pointer;
+}
+.upload-div{
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+.swap-btn{
+  display: flex;
+  justify-content: center;
+}
