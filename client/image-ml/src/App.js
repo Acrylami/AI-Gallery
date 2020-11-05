@@ -1,11 +1,24 @@
 import React from 'react';
-import Home from './Home';
+import {Switch, Route} from 'react-router-dom';
 import './App.css';
+import Home from './Home';
+import Function from './Function';
+
 
 function App() {
   return (
-    <Home />
-    
+    <Switch>
+      <Route exact path='/'>
+        <Home />
+      </Route>
+
+      <Route exact path='/image/:function'>
+        <Function />
+      </Route>
+
+
+    </Switch>
+
   );
 }
 
