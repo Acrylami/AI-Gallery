@@ -14,8 +14,6 @@ def upload_image():
         if request.files:
             image = request.files["image"]
             print(image)
-            return redirect(request.url)
-    return render_template('home.html',  title='MemeSwap')
-
-
-
+            #return redirect(request.url)
+    return 'test'
+    #return render_template('home.html',  title='MemeSwap')
