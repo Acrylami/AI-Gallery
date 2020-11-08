@@ -3,6 +3,26 @@
   margin: 0 10vw;
 }
 
+/* Footer component */
+.footer{
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  background-color: #3f72af;
+  color: white;
+}
+.footer-link{
+  color: white;
+}
+.footer-text{
+  margin-bottom: 0;
+}
+.heart{
+  color: red;
+}
+
 /* Heading component */
 .heading{
   background-color: #021d44;
@@ -18,7 +38,7 @@
 /* Card component */
 .card-div{
   height: 100%;
-  background-color: #3f72af;
+  background-color: #5588a3;
   display: flex;
   flex-direction: column;
   align-items: center;
