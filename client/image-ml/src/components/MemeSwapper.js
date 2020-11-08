@@ -6,7 +6,7 @@ import loadingImg from '../images/loading.png';
 function MemeSwapper() {
     let [input, setInput] = useState(inputImg);
     let [imgBlob, setImgBlob] = useState(null);
-    let [output, setOutput] = useState(swapImg);
+    let [output, setOutput] = useState([swapImg, 'Your output image']);
     let imgRef = useRef(null);
 
     function handleImage(e) {
@@ -23,7 +23,7 @@ function MemeSwapper() {
             alert('input an image');
             return;
         }
-        setOutput(loadingImg);
+        setOutput([loadingImg, 'Hold on, your input image is been swapped']);
         imgRef.current.scrollIntoView({behavior: "smooth"});
         const data = new FormData();
         data.append('image', imgBlob, imgBlob.name);
@@ -35,7 +35,7 @@ function MemeSwapper() {
         if(response){
           let resBlob = await response.blob();
           if(resBlob){
-            setOutput(URL.createObjectURL(resBlob));
+            setOutput([URL.createObjectURL(resBlob), 'Your swapped image']);
           }else{
             console.log('sorry, no image blob');
           }
@@ -45,7 +45,8 @@ function MemeSwapper() {
     }
 
     return (
-      <div>
+      <div style={{textAlign: 'center'}}>
+        <h3>Your input image</h3>
         <img id = "input" src = {input} alt = 'input' className = 'meme-img' />
         <input type = "file" accept = "image/*" name = "image" id = "file" style = {{display: 'none'}} onChange = {handleImage}/>
         <div className = 'upload-div'>
@@ -58,7 +59,8 @@ function MemeSwapper() {
           </button>
         </div>
 
-        <img id = "output" ref={imgRef} src = {output} alt = 'output' className = 'meme-img' />
+        <h3>{output[1]}</h3>
+        <img id = "output" ref={imgRef} src = {output[0]} alt = 'output' className = 'meme-img' />
       </div>
     )
 }
