@@ -1,4 +1,5 @@
 import React, {useState, useRef} from 'react';
+import InputImage from './InputImage';
 import inputImg from '../images/input.png';
 import swapImg from '../images/swap.png';
 import loadingImg from '../images/loading.png';
@@ -19,7 +20,7 @@ function MemeSwapper() {
 
     async function handleSwapBtn(e) {
       e.preventDefault();
-        if (input === null) {
+        if (input === inputImg) {
             alert('input an image');
             return;
         }
@@ -46,12 +47,7 @@ function MemeSwapper() {
 
     return (
       <div style={{textAlign: 'center'}}>
-        <h3>Your input image</h3>
-        <img id = "input" src = {input} alt = 'input' className = 'meme-img' />
-        <input type = "file" accept = "image/*" name = "image" id = "file" style = {{display: 'none'}} onChange = {handleImage}/>
-        <div className = 'upload-div'>
-          <label htmlFor = "file" className = 'btn btn-outline-primary upload-label'> Upload Image </label>
-        </div>
+        <InputImage input={input} handleImage={handleImage}/>
 
         <div className = 'upload-div'>
           <button type = 'button' className = 'btn btn-primary' onClick = {handleSwapBtn}>
