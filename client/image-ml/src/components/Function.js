@@ -3,6 +3,7 @@ import {useParams} from 'react-router-dom';
 import data from '../data';
 import Heading from './Heading';
 import MemeSwapper from './MemeSwapper';
+import Translator from './Translator';
 
 
 function Function(){
@@ -13,7 +14,8 @@ function Function(){
     <div>
       <Heading head={values.head} subHead={values.subHead}/>
       <div className='app-container'>
-        <MemeSwapper />
+        {feature === 'meme' && <MemeSwapper />}
+        {feature === 'translator' && <Translator />}
       </div>
 
     </div>
