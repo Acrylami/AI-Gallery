@@ -1,7 +1,4 @@
 /* General component */
-html {
-  scroll-behavior: smooth;
-}
 .app-container{
   margin: 0 10vw;
 }
@@ -49,6 +46,9 @@ html {
 
 /* MemeSwapper component */
 .meme-img{
+  width: 200px;
+  height: 200px;
+  display: block;
   margin-left: auto;
   margin-right: auto;
 }
