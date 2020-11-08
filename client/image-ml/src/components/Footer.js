@@ -14,9 +14,9 @@ function Footer(){
         <FavoriteIcon className='heart'/>
         &nbsp;
         by
-        <a href={osas} className='footer-link' target='_blank'> <em>Osas</em> </a>,
-        <a href={yashika} className='footer-link' target='_blank'> <em>Yashika</em> </a>,
-        <a href={arlyn} className='footer-link' target='_blank'> <em>Arlyn</em> </a>
+        <a href={osas} className='footer-link' target='_blank' rel='noreferrer'> <em>Osas</em> </a>,
+        <a href={yashika} className='footer-link' target='_blank' rel='noreferrer'> <em>Yashika</em> </a>,
+        <a href={arlyn} className='footer-link' target='_blank' rel='noreferrer'> <em>Arlyn</em> </a>
       </p>
     </footer>
   )
