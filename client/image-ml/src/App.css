@@ -1,4 +1,7 @@
 /* General component */
+html {
+  scroll-behavior: smooth;
+}
 .app-container{
   margin: 0 10vw;
 }
@@ -37,6 +40,7 @@
   margin-top: 30px;
   margin-bottom: 60px;
   color: white;
+  text-align: center;
 }
 .img-card{
   width: 30%;

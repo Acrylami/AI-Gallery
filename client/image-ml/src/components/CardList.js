@@ -2,8 +2,8 @@ import React from 'react';
 import Card from './Card.js';
 
 function CardList(){
-  let list = ['Meme swapper','second','third','fourth','fifth','sixth'];
-  let mlFunctions = ['meme', 'style', 'style', 'style', 'style','style'];
+  let list = ['Meme swapper','Still under construction','Still under construction','Still under construction','Still under construction','Still under construction'];
+  let mlFunctions = ['meme', 'construction', 'construction', 'construction', 'construction','construction'];
 
   return (
     <div className='row row-cols-3 app-container'>
