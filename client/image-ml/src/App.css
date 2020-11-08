@@ -17,8 +17,7 @@
 
 /* Card component */
 .card-div{
-  width: 25vw;
-  height: 50vh;
+  height: 100%;
   background-color: #3f72af;
   display: flex;
   flex-direction: column;
@@ -31,15 +30,16 @@
 .card-div:hover{
   box-shadow: 5px 10px 10px 2px #aaaaaa;
   margin-top: -10px;
-  height: 52vh;
+  height: 105%;
 }
 .card-title{
-  margin-top: 30px;
-  margin-bottom: 60px;
+  margin-top: 5%;
   color: white;
   text-align: center;
 }
 .img-card{
+  margin-top: auto;
+  margin-bottom: 20%;
   width: 30%;
   height: 30%;
 }

@@ -6,7 +6,7 @@ function CardList(){
   let mlFunctions = ['meme', 'construction', 'construction', 'construction', 'construction','construction'];
 
   return (
-    <div className='row row-cols-3 app-container'>
+    <div className='row row-cols-1 row-cols-lg-3 row-cols-md-2 app-container'>
       {list.map((item, index) => <div className='col mb-3' key={item}>
         <Card title={item} mlFunct={mlFunctions[index]}/>
       </div>)}
