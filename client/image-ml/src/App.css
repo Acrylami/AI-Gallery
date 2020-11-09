@@ -3,6 +3,26 @@
   margin: 0 10vw;
 }
 
+/* Footer component */
+.footer{
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  background-color: #3f72af;
+  color: white;
+}
+.footer-link{
+  color: white;
+}
+.footer-text{
+  margin-bottom: 0;
+}
+.heart{
+  color: red;
+}
+
 /* Heading component */
 .heading{
   background-color: #021d44;
@@ -17,9 +37,8 @@
 
 /* Card component */
 .card-div{
-  width: 25vw;
-  height: 50vh;
-  background-color: #3f72af;
+  height: 100%;
+  background-color: #5588a3;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,20 +50,25 @@
 .card-div:hover{
   box-shadow: 5px 10px 10px 2px #aaaaaa;
   margin-top: -10px;
-  height: 52vh;
+  height: 105%;
 }
 .card-title{
-  margin-top: 30px;
-  margin-bottom: 60px;
+  margin-top: 5%;
   color: white;
+  text-align: center;
 }
 .img-card{
+  margin-top: auto;
+  margin-bottom: 20%;
   width: 30%;
   height: 30%;
 }
 
 /* MemeSwapper component */
 .meme-img{
+  width: 200px;
+  height: 200px;
+  display: block;
   margin-left: auto;
   margin-right: auto;
 }
@@ -56,6 +80,7 @@
   display: flex;
   justify-content: center;
   margin-top: 50px;
+  margin-bottom: 50px;
 }
 .swap-btn{
   display: flex;
