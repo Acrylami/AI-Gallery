@@ -34,8 +34,13 @@ def upload_image():
 
             #Swaps faces with set meme and outputs as result.jpg
             saved_path = face_swap(filename)
-            
-            return send_file(saved_path, mimetype='image/jpg') #Must use different file path
+            #Check it didn't fail
+            if saved_path == False:
+                #send text
+                print("Could not swap face! No face detected. Try a different image")
+                return "Could not swap face! No face detected. Try a different image"
+            else:
+                return send_file(saved_path, mimetype='image/jpg') 
     return 'test'
 
 '''
@@ -54,8 +59,27 @@ def face_swap(uploaded_image):
     meme_filepath = image_path + meme
     uploaded_filepath = image_path + uploaded_image
     output_filepath = image_path + 'result.jpg'
+    
+    #Runs the faceswapping scripts
+    if (test(uploaded_filepath, meme_filepath, output_filepath)):
+        #Ran properly
+        #Delete uploaded files
+        if os.path.exists(uploaded_filepath):
+            os.remove(uploaded_filepath)
+        return output_filepath
+    else:
+        #Didn't find face, couldn't swap
+        return False
 
-    test(uploaded_filepath, meme_filepath, output_filepath) #Runs the faceswapping scripts
+
+
+def remove_background(uploaded_image):
+    image_path = os.getcwd()+ '\\main\\Images\\'
+    uploaded_filepath = image_path + uploaded_image
+    output_filepath = image_path + 'result.jpg'
+
+    test(uploaded_filepath, output_filepath)
+    
     #Delete uploaded files
     if os.path.exists(uploaded_filepath):
         os.remove(uploaded_filepath)
