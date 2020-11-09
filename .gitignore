@@ -7,5 +7,3 @@ venv
 #Python env file
 .env
 
-#Meme swapped images
-main/Images
