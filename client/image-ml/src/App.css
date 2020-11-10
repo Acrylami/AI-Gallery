@@ -86,3 +86,11 @@
   display: flex;
   justify-content: center;
 }
+
+/* Translator component */
+.object-title{
+  font-size: 25px;
+}
+.object-hr{
+  background: grey;
+}

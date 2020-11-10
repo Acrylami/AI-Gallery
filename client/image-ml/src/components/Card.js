@@ -1,6 +1,7 @@
 import React from 'react';
 import {useHistory} from 'react-router-dom';
 import memeImg from '../images/drama.png';
+import translatorImg from '../images/translate.png';
 import constructionImg from '../images/construction.png';
 
 function Card(props){
@@ -9,6 +10,10 @@ function Card(props){
   switch(props.mlFunct){
     case 'meme':
     imgSrc = memeImg;
+    break;
+
+    case 'translator':
+    imgSrc = translatorImg;
     break;
 
     default:
