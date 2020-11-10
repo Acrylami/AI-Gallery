@@ -21,6 +21,7 @@ def run_swap(src, dst, out, warp_2d=False, correct_color=False, no_debug_window=
 
     if src_points is None or dst_points is None:
         print('Detect 0 Face !!!')
+        return False
         exit(-1)
 
     output = face_swap(src_face, dst_face, src_points, dst_points, dst_shape, dst_img)
@@ -30,6 +31,7 @@ def run_swap(src, dst, out, warp_2d=False, correct_color=False, no_debug_window=
         os.makedirs(dir_path)
 
     cv2.imwrite(out, output)
+    return True
 
     ##For debug
     if not no_debug_window:
