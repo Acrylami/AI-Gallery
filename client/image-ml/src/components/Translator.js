@@ -9,6 +9,7 @@ import objectImg from '../images/objects.png';
 
 function Translator(){
   let [input, setInput] = useState(objectImg);
+  let [translate, setTranslate] = useState([]);
   let imgRef = useRef(null);
 
   function handleImage(e) {
@@ -25,7 +26,7 @@ function Translator(){
     }
     const model = await cocoSsd.load();
     const predictions = await model.detect(imgRef.current);
-    if(predictions.length >== 1){
+    if(predictions.length >= 1){
       console.log('object detected');
     }else{
       console.log('no object detected');
@@ -40,6 +41,7 @@ function Translator(){
     }
     const iterator = nameSet.values();
     const name = iterator.next().value;
+    console.log(name);
 
     let options = {
       "method": "POST",
@@ -48,8 +50,11 @@ function Translator(){
     		"content-type": "application/json",
       },
     };
-
+    console.log('sending to flask');
     let response = await fetch('/server/translate',options);
+    const resText = await response.json();
+    setTranslate(resText);
+    console.log(resText);
 
   }
   const uploadText = 'Detect objects';
@@ -58,6 +63,7 @@ function Translator(){
     <div style={{textAlign: 'center'}}>
       <InputImage imgRef={imgRef} input={input} handleImage={handleImage}/>
       <UploadBtn btnText={uploadText} handleUploadBtn={detectObjects}/>
+      {translate.length > 0 && translate.map((item) => <p>{item[1]}</p>)}
     </div>
   )
 }
