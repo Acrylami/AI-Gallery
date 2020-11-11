@@ -36,11 +36,12 @@ function MemeSwapper() {
     let response = await fetch('/server/upload', options);
     if(response){
       let resText = await response.text();
-      if(resText){
+      if(resText === 'not detected'){
+        setOutput([swapImg, 'No face was detected in your input image, try another image']);
+
+      }else{
         const newSrc = `data:image/png;base64,${resText}`;
         setOutput([newSrc, 'Your swapped image']);
-      }else{
-        console.log('sorry, no image blob');
       }
     }else{
       console.log('sorry, got no image response');

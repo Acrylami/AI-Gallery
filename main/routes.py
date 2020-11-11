@@ -44,7 +44,6 @@ def upload_image():
 
             else:
                 #send text
-                print("Could not swap face! No face detected. Try a different image")
                 return "not detected"
     return 'test'
 
