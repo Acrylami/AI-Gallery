@@ -3,7 +3,7 @@ import InputImage from './InputImage';
 import UploadBtn from './UploadBtn';
 import inputImg from '../images/input.png';
 import swapImg from '../images/swap.png';
-import loadingImg from '../images/loading.png';
+import loadingImg from '../images/loading.gif';
 
 function MemeSwapper() {
   let [input, setInput] = useState(inputImg);
@@ -49,12 +49,12 @@ function MemeSwapper() {
 
 
   return (
-    <div style={{textAlign: 'center'}}>
-      <InputImage input={input} handleImage={handleImage}/>
+    <div>
+      <InputImage input={input} handleImage={handleImage} imgText='input'/>
       <UploadBtn btnText={uploadText} handleUploadBtn={handleSwapBtn}/>
 
       <h3>{output[1]}</h3>
-      <img id = "output" ref={imgRef} src = {output[0]} alt = 'output' className = 'meme-img' />
+      <img id = "output" ref={imgRef} src = {output[0]} alt = 'output' className = 'app-img' />
     </div>
   )
 }

@@ -8,8 +8,8 @@ const data = {
     subHead: 'upload a picture of an object and let our application tell you the names of the uploaded object in different languages',
   },
   style: {
-    head: 'osas',
-    subHead: 'osas',
+    head: 'Welcome to style transfer',
+    subHead: 'upload a content image and a style image and let our application paint your content image with the styles in your style image',
   }
 }
 

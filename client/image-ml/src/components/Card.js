@@ -2,6 +2,7 @@ import React from 'react';
 import {useHistory} from 'react-router-dom';
 import memeImg from '../images/drama.png';
 import translatorImg from '../images/translate.png';
+import styleTransferImg from '../images/style_transfer.png';
 import constructionImg from '../images/construction.png';
 
 function Card(props){
@@ -14,6 +15,10 @@ function Card(props){
 
     case 'translator':
     imgSrc = translatorImg;
+    break;
+
+    case 'style':
+    imgSrc = styleTransferImg;
     break;
 
     default:

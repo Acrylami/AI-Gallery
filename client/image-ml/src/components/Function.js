@@ -4,6 +4,7 @@ import data from '../data';
 import Heading from './Heading';
 import MemeSwapper from './MemeSwapper';
 import Translator from './Translator';
+import StyleTransfer from './StyleTransfer';
 
 
 function Function(){
@@ -16,6 +17,7 @@ function Function(){
       <div className='app-container'>
         {feature === 'meme' && <MemeSwapper />}
         {feature === 'translator' && <Translator />}
+        {feature === 'style' && <StyleTransfer />}
       </div>
 
     </div>

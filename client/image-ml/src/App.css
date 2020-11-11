@@ -1,6 +1,7 @@
 /* General component */
 .app-container{
   margin: 0 10vw;
+  text-align: center;
 }
 
 /* Footer component */
@@ -54,6 +55,7 @@
 }
 .card-title{
   margin-top: 5%;
+  margin-bottom: 15%;
   color: white;
   text-align: center;
 }
@@ -65,7 +67,7 @@
 }
 
 /* MemeSwapper component */
-.meme-img{
+.app-img{
   width: 200px;
   height: 200px;
   display: block;

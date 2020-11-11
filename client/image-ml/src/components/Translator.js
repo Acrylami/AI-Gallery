@@ -5,7 +5,7 @@ import * as cocoSsd from '@tensorflow-models/coco-ssd';
 import InputImage from './InputImage';
 import UploadBtn from './UploadBtn';
 import objectImg from '../images/objects.png';
-import loadingImg from '../images/loading.png';
+import loadingImg from '../images/loading.gif';
 
 
 function Translator(){
@@ -69,15 +69,15 @@ function Translator(){
   const uploadText = 'Detect objects';
 
   return(
-    <div style={{textAlign: 'center'}}>
-      <InputImage imgRef={imgRef} input={input} handleImage={handleImage}/>
+    <div>
+      <InputImage imgRef={imgRef} input={input} handleImage={handleImage} imgText='input'/>
       <UploadBtn btnText={uploadText} handleUploadBtn={detectObjects}/>
       {detect[0].length > 0 && <h3>{detect[0]}</h3>}
 
       <img id = "output" ref={loadingRef} style={{
         visibility: detect[1], display: detect[0].length > 0 && translate.length > 0?
       'none' : 'block'}}
-        src = {loadingImg} alt = 'output' className = 'meme-img' />
+        src = {loadingImg} alt = 'output' className = 'app-img' />
       {translate.length > 0 && <hr className='object-hr'/>}
       {translate.length > 0 && <p className='object-title'>Name of object detected is <b>{name}</b></p>}
       {translate.length > 0 && translate.map((item) => <p key={item[0]}>{item[0]} : {item[1]}</p>)}
