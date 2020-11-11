@@ -35,9 +35,10 @@ function MemeSwapper() {
     };
     let response = await fetch('/server/upload', options);
     if(response){
-      let resBlob = await response.blob();
-      if(resBlob){
-        setOutput([URL.createObjectURL(resBlob), 'Your swapped image']);
+      let resText = await response.text();
+      if(resText){
+        const newSrc = `data:image/png;base64,${resText}`;
+        setOutput([newSrc, 'Your swapped image']);
       }else{
         console.log('sorry, no image blob');
       }

@@ -1,6 +1,6 @@
 #! /usr/bin/env python
 import os
-import numpy.core.multiarray 
+import numpy.core.multiarray
 import cv2
 import argparse
 import dlib
@@ -10,9 +10,9 @@ import logging
 
 
 
-def run_swap(src, dst, out, warp_2d=False, correct_color=False, no_debug_window=True):
+def run_swap(src, dst, warp_2d=False, correct_color=False, no_debug_window=True):
     # Read images
-    src_img = cv2.imread(src)
+    src_img = cv2.imdecode(src,cv2.IMREAD_COLOR)
     dst_img = cv2.imread(dst)
 
     # Select src face
@@ -26,31 +26,9 @@ def run_swap(src, dst, out, warp_2d=False, correct_color=False, no_debug_window=
         exit(-1)
 
     output = face_swap(src_face, dst_face, src_points, dst_points, dst_shape, dst_img)
+    output = cv2.cvtColor(output, cv2.COLOR_BGR2RGB)
 
-    dir_path = os.path.dirname(out)
-    if not os.path.isdir(dir_path):
-        os.makedirs(dir_path)
-
-    cv2.imwrite(out, output)
-    return True
-
-    ##For debug
-    if not no_debug_window:
-        cv2.imshow("From", dst_img)
-        cv2.imshow("To", output)
-        cv2.waitKey(0)
-
-        cv2.destroyAllWindows()
-
-
-
-
-
-
-
-
-
-
+    return output
 
 
 
