@@ -30,11 +30,32 @@ function StyleTransfer(){
     setStyle(URL.createObjectURL(e.target.files[0]));
   }
 
-  function startStyleTransfer(){
+  async function startStyleTransfer(){
     if(content === contentImg || style === styleImg){
       alert('please upload a content image and a style image');
       return;
     }
+    const data = new FormData();
+    data.append('content', contentBlob, contentBlob.name);
+    data.append('style', styleBlob, styleBlob.name);
+    let options = {
+      method: 'POST',
+      body: data,
+    }
+    let response = await fetch('/server/style-transfer', options);
+    if(response){
+      console.log('got a response');
+      let resBlob = await resBlob.blob();
+      if(resBlob){
+        console.log('got an image blob');
+        setTransfer(URL.createObjectURL(resBlob));
+      }else{
+        console.log('no image blob');
+      }
+    }else{
+      console.log('no response');
+    }
+
   }
 
   return(
