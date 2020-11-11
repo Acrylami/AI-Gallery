@@ -1,5 +1,6 @@
 #! /usr/bin/env python
 import os
+import numpy.core.multiarray 
 import cv2
 import argparse
 import dlib
@@ -38,7 +39,7 @@ def run_swap(src, dst, out, warp_2d=False, correct_color=False, no_debug_window=
         cv2.imshow("From", dst_img)
         cv2.imshow("To", output)
         cv2.waitKey(0)
-        
+
         cv2.destroyAllWindows()
 
 
@@ -52,7 +53,7 @@ def run_swap(src, dst, out, warp_2d=False, correct_color=False, no_debug_window=
 
 
 
-    
+
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='FaceSwapApp')
@@ -89,9 +90,9 @@ if __name__ == '__main__':
     if not args.no_debug_window:
         cv2.imshow("From", dst_img)
         cv2.imshow("To", output)
-        
+
         cv2.waitKey(0)
-        
+
         cv2.destroyAllWindows()
 
 
@@ -346,7 +347,7 @@ def face_detection(img,upsample_times=1):
     return faces
 
 
-PREDICTOR_PATH = os.getcwd() + '\\main\\FaceSwap\\models\\shape_predictor_68_face_landmarks.dat' 
+PREDICTOR_PATH = os.getcwd() + '\\main\\FaceSwap\\models\\shape_predictor_68_face_landmarks.dat'
 predictor = dlib.shape_predictor(PREDICTOR_PATH)
 ## Face and points detection
 def face_points_detection(img, bbox:dlib.rectangle):
@@ -402,6 +403,3 @@ def select_face(im, r=10, choose=True):
     w, h = min(right + r, im_h) - x, min(bottom + r, im_w) - y
 
     return points - np.asarray([[x, y]]), (x, y, w, h), im[y:y + h, x:x + w]
-
-
-        
