@@ -7,3 +7,5 @@ venv
 #Python env file
 .env
 
+#vs code
+.vscode
