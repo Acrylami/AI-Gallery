@@ -11,7 +11,12 @@ from io import BytesIO
 import numpy as np
 from werkzeug.utils import secure_filename
 from .FaceSwap.main2 import run_swap as swapper
+from .StyleTransfer.transfer import transfer_images
 import random
+
+
+#Base send_from_directory
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 #Will move this to config later, staying here for easier debug
 app.config["ALLOWED_IMAGE_EXTENSIONS"] = ["PNG", "JPG", "JPEG"] #Must double check with script we are using
@@ -47,9 +52,24 @@ def upload_image():
                 return "not detected"
     return 'test'
 
-# @app.route('/server/style-transfer', methods=['POST'])
-# def style_transfer():
+@app.route('/server/style-transfer', methods=['POST'])
+def style_transfer():
+    content = request.files['content']
+    style = request.files['style']
+    contentPath = os.path.join(BASE_DIR, 'StyleTransfer', content.filename)
+    stylePath = os.path.join(BASE_DIR, 'StyleTransfer', style.filename)
+    content.save(contentPath)
+    style.save(stylePath)
 
+    output = transfer_images(contentPath, stylePath)
+    buffered = BytesIO()
+    output.save(buffered, format='PNG')
+    img_str = base64.b64encode(buffered.getvalue())
+
+    os.remove(contentPath)
+    os.remove(stylePath)
+
+    return img_str
 
 @app.route('/server/translate', methods=["POST"])
 def translate_text():

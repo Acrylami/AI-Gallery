@@ -4,6 +4,7 @@ import UploadBtn from './UploadBtn';
 import contentImg from '../images/content.png';
 import styleImg from '../images/style.png';
 import transferImg from '../images/transfer.png';
+import loadingImg from '../images/loading.gif';
 
 function StyleTransfer(){
   let [content, setContent] = useState(contentImg);
@@ -42,19 +43,24 @@ function StyleTransfer(){
       method: 'POST',
       body: data,
     }
+    setTransfer(loadingImg);
+    transferRef.current.scrollIntoView({behavior: "smooth"});
     let response = await fetch('/server/style-transfer', options);
     if(response){
-      console.log('got a response');
-      let resBlob = await resBlob.blob();
-      if(resBlob){
-        console.log('got an image blob');
-        setTransfer(URL.createObjectURL(resBlob));
+      console.log('I got a response');
+      let resText = await response.text();
+      if(resText){
+        console.log('I got an image blob');
+        const newSrc = `data:image/png;base64,${resText}`;
+        setTransfer(newSrc);
+        return;
       }else{
-        console.log('no image blob');
+        console.log('no image base64 str');
       }
     }else{
       console.log('no response');
     }
+    setTransfer(transferImg);
 
   }
 
