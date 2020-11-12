@@ -20,9 +20,9 @@
 
 ## Key Features
 
-* 
-* 
-* 
+*
+*
+*
 
 ## How To Use
 
@@ -39,8 +39,8 @@
 This software uses the following open source packages:
 
 - README layout https://github.com/amitmerchant1990/electron-markdownify
-- 
-- 
+-
+-
 
 
 ## License
@@ -48,5 +48,3 @@ This software uses the following open source packages:
 MIT
 
 ---
-
-

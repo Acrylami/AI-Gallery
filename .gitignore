@@ -4,6 +4,5 @@ __pycache__/
 #Python venv
 venv
 
-#Python env file
+#App env
 .env
-
