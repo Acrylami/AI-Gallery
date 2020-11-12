@@ -3,7 +3,7 @@ import InputImage from './InputImage';
 import UploadBtn from './UploadBtn';
 import inputImg from '../images/input.png';
 import swapImg from '../images/swap.png';
-import loadingImg from '../images/loading.png';
+import loadingImg from '../images/loading.gif';
 
 function MemeSwapper() {
   let [input, setInput] = useState(inputImg);
@@ -35,11 +35,13 @@ function MemeSwapper() {
     };
     let response = await fetch('/server/upload', options);
     if(response){
-      let resBlob = await response.blob();
-      if(resBlob){
-        setOutput([URL.createObjectURL(resBlob), 'Your swapped image']);
+      let resText = await response.text();
+      if(resText === 'not detected'){
+        setOutput([swapImg, 'No face was detected in your input image, try another image']);
+
       }else{
-        console.log('sorry, no image blob');
+        const newSrc = `data:image/png;base64,${resText}`;
+        setOutput([newSrc, 'Your swapped image']);
       }
     }else{
       console.log('sorry, got no image response');
@@ -49,12 +51,12 @@ function MemeSwapper() {
 
 
   return (
-    <div style={{textAlign: 'center'}}>
-      <InputImage input={input} handleImage={handleImage}/>
+    <div>
+      <InputImage input={input} handleImage={handleImage} imgText='input'/>
       <UploadBtn btnText={uploadText} handleUploadBtn={handleSwapBtn}/>
 
       <h3>{output[1]}</h3>
-      <img id = "output" ref={imgRef} src = {output[0]} alt = 'output' className = 'meme-img' />
+      <img id = "output" ref={imgRef} src = {output[0]} alt = 'output' className = 'app-img' />
     </div>
   )
 }
