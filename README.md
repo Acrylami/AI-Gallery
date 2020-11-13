@@ -29,7 +29,7 @@
 * Upload a content image and a style image and let our application paint your content image with the styles in your style image
 ### ➕...More in construction
 
-## Try Now
+## 🖼️ Try Now
 Visit http://arlyn.gay/
 Click on the feature you wish to try
 
