@@ -30,7 +30,7 @@
 ### ➕...More in construction
 
 ## 🖼️ Try Now
-Visit http://arlyn.gay/
+Visit http://aigallery.design/
 Click on the feature you wish to try
 
 ## 📋 How To Use in Development Environment
