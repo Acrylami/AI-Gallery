@@ -56,7 +56,9 @@ You can be the artist. Upload your picture along with the style you love and let
 * Upload a content image and a style image and let our application paint your content image with the styles in your style image
 
 <img src="screenshots/style_transfer.png" alt="content and style" height=300/>
-<img src="screenshots/style_output.png" alt="style transfer output" height=200/>
+<p align="center">
+  <img src="screenshots/style_output.png" alt="style transfer output" height=200/>
+</p>
 
 
 ### ➕...More in construction
