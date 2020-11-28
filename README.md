@@ -34,10 +34,10 @@ Share memes with your friends but with your face instead!
 
 ### 🌐 Object Translator
 
-Out of thousands of language around the world, we can only speak one or two(even more if you are a ninja!). Ever womdered what a particular thing is called in other languages? 
+Out of thousands of language around the world, we can only speak one or two(even more if you are a ninja!). Ever wondered what a particular thing is called in other languages? 
 Introducing object translator. Upload literally anything and let AI tell what its called in other langauges. 
 
-* Upload an image, get back the object's name in many different languages
+* Upload an image with generally one object (a picture of a dog, two dogs or three), get back the object's name in many different languages
 
 ### 🎨 Style Transfer
 
