@@ -39,6 +39,7 @@ Introducing object translator. Upload literally anything and let AI tell what it
 
 * Upload an image with generally one object (a picture of a dog, two dogs or three), get back the object's name in many different languages
 
+
 ### 🎨 Style Transfer
 
 You can be Picasso! or Da Vinci or Salvador Dali. 
@@ -69,8 +70,8 @@ Want to get a taste of development? Follow these steps and get it up and running
 This software uses the following open source packages:
 
 - README layout https://github.com/amitmerchant1990/electron-markdownify
+
 - Faceswap feature: https://github.com/wuhuikai/FaceSwap [1](https://github.com/wuhuikai/FaceSwap/issues/28)
-- 
 
 
 ## 📝 License
@@ -78,5 +79,3 @@ This software uses the following open source packages:
 MIT
 
 ---
-
-

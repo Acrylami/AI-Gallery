@@ -24,7 +24,7 @@ app.config["ALLOWED_IMAGE_EXTENSIONS"] = ["PNG", "JPG", "JPEG"] #Must double che
 @app.route("/")
 @app.route("/home")
 def home():
-    return render_template('home.html',  title='MemeSwap')
+    return render_template('index.html')
 
 
 # allowed_image(filename):
